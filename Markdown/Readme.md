@@ -1,4 +1,4 @@
-Markdown cheatsheet
+# Markdown cheatsheet
 
 ##### Table of Contents
 [Headers](#headers)  
