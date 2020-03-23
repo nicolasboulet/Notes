@@ -13,7 +13,7 @@ sudo apt-get install python-minimal virtualenv python-dev build-essential
 ### Vitual env, pip, how select ansible version
 
 ```bash
-virtualenv myenv27
+virtualenv venv27
 source venv27/bin/activate
 which pip
 pip install ansible
