@@ -34,7 +34,7 @@ pip install git+https://github.com/ansible/ansible
 
 ```
 
-<a name="install"/>
+<a name="config"/>
 
 ## Config
 
@@ -57,13 +57,30 @@ sudo mkdir /etc/ansible
 sudo touch /etc/ansible/ansible.cfg
 ```
 
-<a name="install"/>
+### Config ssh key => access to the hosts
+
+```bash
+ssh-keygen -H -F centos1
+ssh-keygen -H -F 192.168.0.45
+
+```
+
+### ansible.cfg
+
+```bash
+#store automaticaly ssh key
+host_key_checking = False
+```
+
+<a name="command"/>
 
 ## Commande
 
 
 ```bash
 ## Ping (all is host group)
-
 ansible all -m ping
+
+## Ping automaticaly store key for one time or see config ansible.cfg section for permanent settings
+ANSIBLE_HOST_KEY_CHECKING=False ansible all -m ping
 ```
