@@ -86,6 +86,9 @@ ansible-doc debug
 
 ## Changing args
 ansible all -m debug --args='msg="This is a custom debug message" verbosity=3'
+
+### list hosts of group
+ansible centos --list-hosts
 ```
 
 ### Ping
@@ -96,9 +99,11 @@ ansible all -m ping
 ## Ping automaticaly store key for one time or see config ansible.cfg section for permanent settings
 ANSIBLE_HOST_KEY_CHECKING=False ansible all -m ping
 
-## Ping whitout use hosts inventory file but spoecifing it in the command
+## Ping specifing on,e host of the group
 ansible all -i centos1, -m ping
 
+## Ping with result on only one line
+ansible all -m ping -o
 ```
 
 ### Debug
