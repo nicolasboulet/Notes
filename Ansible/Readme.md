@@ -2,6 +2,7 @@
 
 ##### Table of Contents
 [Install](#install)  
+[Config](#config)
 
 <a name="install"/>
 
@@ -31,3 +32,15 @@ sudo apt install git
 pip install git+https://github.com/ansible/ansible
 
 ```
+
+<a name="install"/>
+
+##Config
+
+###Config file precedence
+
+1. ANSIBLE_CONFIG
+2. ./ansible.cfg
+3. ~/.ansible.cfg
+4. /etc/ansible/ansible.cfg
+
