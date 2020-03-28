@@ -3,6 +3,7 @@
 ##### Table of Contents
 [Install](#install)  
 [Config](#config)
+[Command](#command)
 
 <a name="install"/>
 
@@ -54,4 +55,15 @@ touch ~/.ansible.cfg
 
 sudo mkdir /etc/ansible
 sudo touch /etc/ansible/ansible.cfg
+```
+
+<a name="install"/>
+
+## Commande
+
+
+```bash
+## Ping (all is host group)
+
+ansible all -m ping
 ```
