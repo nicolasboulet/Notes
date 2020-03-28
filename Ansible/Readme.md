@@ -60,9 +60,11 @@ sudo touch /etc/ansible/ansible.cfg
 ### Config ssh key => access to the hosts
 
 ```bash
-ssh-keygen -H -F centos1
-ssh-keygen -H -F 192.168.0.45
+#ssh-keygen -H -F centos1
+#ssh-keygen -H -F 192.168.0.45
 
+ssh-keygen #always answer with default options
+ssh-copy-id centos1
 ```
 
 ### ansible.cfg
@@ -76,11 +78,39 @@ host_key_checking = False
 
 ## Commande
 
+### General 
 
+```bash
+## Documentation
+ansible-doc debug
+
+## Changing args
+ansible all -m debug --args='msg="This is a custom debug message" verbosity=3'
+```
+
+### Ping
 ```bash
 ## Ping (all is host group)
 ansible all -m ping
 
 ## Ping automaticaly store key for one time or see config ansible.cfg section for permanent settings
 ANSIBLE_HOST_KEY_CHECKING=False ansible all -m ping
+
+## Ping whitout use hosts inventory file but spoecifing it in the command
+ansible all -i centos1, -m ping
+
+```
+
+### Debug
+
+```bash
+ansible all -m debug
+```
+
+### You should known
+
+```bash
+ansible all -m ping
+# Is equivalent to
+ansible '*' -m ping
 ```
