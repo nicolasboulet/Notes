@@ -44,3 +44,14 @@ pip install git+https://github.com/ansible/ansible
 3. ~/.ansible.cfg
 4. /etc/ansible/ansible.cfg
 
+```bash
+touch /tmp/ANSIBLE_CONFIG.cfg
+export ANSIBLE_CONFIG = /tmp/ANSIBLE_CONFIG.cfg
+
+touch ./ansible.cfg
+
+touch ~/.ansible.cfg
+
+sudo mkdir /etc/ansible
+sudo touch /etc/ansible/ansible.cfg
+```
