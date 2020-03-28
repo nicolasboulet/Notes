@@ -10,7 +10,7 @@
 sudo apt-get update
 sudo apt-get install python-minimal virtualenv python-dev build-essential
 ```
-### Vitual env, pip, how select ansible version active an deactive
+### Vitualenv active and deactive, pip and ansible install
 
 ```bash
 #create virtual environement active and desactive it
