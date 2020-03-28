@@ -35,9 +35,9 @@ pip install git+https://github.com/ansible/ansible
 
 <a name="install"/>
 
-##Config
+## Config
 
-###Config file precedence
+### Config file precedence
 
 1. ANSIBLE_CONFIG
 2. ./ansible.cfg
@@ -46,7 +46,7 @@ pip install git+https://github.com/ansible/ansible
 
 ```bash
 touch /tmp/ANSIBLE_CONFIG.cfg
-export ANSIBLE_CONFIG = /tmp/ANSIBLE_CONFIG.cfg
+export ANSIBLE_CONFIG=/tmp/ANSIBLE_CONFIG.cfg
 
 touch ./ansible.cfg
 
