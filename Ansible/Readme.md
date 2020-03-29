@@ -92,6 +92,9 @@ ansible all -m debug --args='msg="This is a custom debug message" verbosity=3'
 
 ### list hosts of group
 ansible centos --list-hosts
+
+### changing a var
+ansible all -m ping -e 'ansible_port=22'
 ```
 
 ### Ping
