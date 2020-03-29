@@ -125,16 +125,80 @@ ansible '*' -m ping
 
 ## Inventory
 
-### Select an user for host
+### Select an user port for host
 
-```yaml
+```bash
+[control]
+ubuntu-c ansible_connection=local  # local connection node-manager
+
 [centos] # Group centos
-centos1 ansible_user=root # host centos1 with user root
-centos2 ansible_user=root
-centos3 ansible_user=root
+centos1 ansible_user=root ansible_port=2222 # using the port 2222
+centos2 ansible_user=root # host centos1 with user root
+centos3:22 ansible_user=root # select the port 22 (for the example )
 
 [ubuntu]
 ubuntu1 ansible_become=true ansible_become_pass=password # log in regular user and ask to become sudo with specified password (ansible_become_password)
 ubuntu2 ansible_become=true ansible_become_pass=password
 ubuntu3 ansible_become=true ansible_become_pass=password
+```
+
+### use a range
+ 
+```bash
+[control]
+ubuntu-c ansible_connection=local
+
+[centos]
+centos1 ansible_user=root ansible_port=2222
+centos[2:3] ansible_user=root
+
+[ubuntu]
+ubuntu[1:3] ansible_become=true ansible_become_pass=password
+
+```
+
+### use a vars
+
+```bash
+[control]
+ubuntu-c ansible_connection=local
+
+[centos]
+centos1 ansible_port=2222
+centos[2:3]
+
+[centos:vars]
+ansible_user=root
+
+[ubuntu]
+ubuntu[1:3]
+
+[ubuntu:vars]
+ansible_become=true
+ansible_become_pass=password
+```
+
+### use  children
+
+```bash
+[control]
+ubuntu-c ansible_connection=local
+
+[centos]
+centos1 ansible_port=2222
+centos[2:3]
+
+[centos:vars]
+ansible_user=root
+
+[ubuntu]
+ubuntu[1:3]
+
+[ubuntu:vars]
+ansible_become=true
+ansible_become_pass=password
+
+[linux:children]
+centos
+ubuntu
 ```
