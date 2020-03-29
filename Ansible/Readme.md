@@ -105,6 +105,9 @@ ANSIBLE_HOST_KEY_CHECKING=False ansible all -m ping
 ## Ping specifing on,e host of the group
 ansible all -i centos1, -m ping
 
+## Ping specifing host file
+ansible all -i hosts.json -m ping
+
 ## Ping with result on only one line
 ansible all -m ping -o
 ```
