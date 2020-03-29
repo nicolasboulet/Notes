@@ -71,6 +71,8 @@ ssh-copy-id centos1
 ### ansible.cfg
 
 ```bash
+[defaults]
+inventory = hosts.json #extension is important format (INI/JSON/YAML)
 #store automaticaly ssh key
 host_key_checking = False
 ```
