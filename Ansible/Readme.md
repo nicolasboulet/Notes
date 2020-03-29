@@ -128,13 +128,13 @@ ansible '*' -m ping
 ### Select an user for host
 
 ```yaml
-[centos] # Group
+[centos] # Group centos
 centos1 ansible_user=root # host centos1 with user root
 centos2 ansible_user=root
 centos3 ansible_user=root
 
 [ubuntu]
-ubuntu1
-ubuntu2
-ubuntu3
+ubuntu1 ansible_become=true ansible_become_pass=password # log in regular user and ask to become root with password password
+ubuntu2 ansible_become=true ansible_become_pass=password
+ubuntu3 ansible_become=true ansible_become_pass=password
 ```
