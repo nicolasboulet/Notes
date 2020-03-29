@@ -2,9 +2,9 @@
 
 ##### Table of Contents
 [Install](#install)  
-[Config](#config)
-[Command](#command)
-[Inventory](#inventory)
+[Config](#config)  
+[Command](#command)  
+[Inventory](#inventory)  
 
 <a name="install"/>
 
