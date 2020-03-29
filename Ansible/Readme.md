@@ -4,6 +4,7 @@
 [Install](#install)  
 [Config](#config)
 [Command](#command)
+[Inventory](#inventory)
 
 <a name="install"/>
 
@@ -118,4 +119,22 @@ ansible all -m debug
 ansible all -m ping
 # Is equivalent to
 ansible '*' -m ping
+```
+
+<a name="inventory"/>
+
+## Inventory
+
+### Select an user for host
+
+```yaml
+[centos] # Group
+centos1 ansible_user=root # host centos1 with user root
+centos2 ansible_user=root
+centos3 ansible_user=root
+
+[ubuntu]
+ubuntu1
+ubuntu2
+ubuntu3
 ```
