@@ -134,7 +134,7 @@ centos2 ansible_user=root
 centos3 ansible_user=root
 
 [ubuntu]
-ubuntu1 ansible_become=true ansible_become_pass=password # log in regular user and ask to become root with password password
+ubuntu1 ansible_become=true ansible_become_pass=password # log in regular user and ask to become sudo with specified password (ansible_become_password)
 ubuntu2 ansible_become=true ansible_become_pass=password
 ubuntu3 ansible_become=true ansible_become_pass=password
 ```
