@@ -4,6 +4,8 @@
 [Import](#import)  
 [Ruby](#ruby)  
 [Connection](#connection)  
+[Mongo](#mongo)  
+[Rails]#(#rails)
 
 
 <a name="import"/>
@@ -49,4 +51,38 @@ db.database.collection_names
 db[:zips].find.first 
 ```
 
+<a name="mongo"/>
 
+## Use Mongo cli
+
+```bash
+mongo
+
+use test
+
+db.zips.findOne()
+
+```
+
+
+<a name="rails"/>
+
+## Rails
+
+See the code [here](https://github.com/nicolasboulet/fullstack-course3-module1-zips)
+
+### Gemfile
+gem 'mongoid'
+
+### Create mongoid.yml
+
+```bash
+rails g mongoid:config
+```
+### Bootstrap mongoid with the application
+
+See conf [here](https://github.com/nicolasboulet/fullstack-course3-module1-zips/blob/master/config/application.rb)
+
+```ruby
+Mongoid.load!('./config/mongoid.yml')
+```
