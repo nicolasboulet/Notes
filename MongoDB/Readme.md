@@ -1,6 +1,7 @@
 #MongoDB Notes
 
 ##### Table of Contents
+[Infos](#infos)  
 [Import](#import)  
 [Ruby](#ruby)  
 [Connection](#connection)  
@@ -9,6 +10,15 @@
 [rails console](#railsc)  
 [SQL to Mongo](#sqlmongo)  
 
+
+<a name="infos"/>
+## Infos and useful stuff
+
+[Official documentation](https://docs.mongodb.com/manual/introduction/)
+
+BSON => Binary JSON
+Binary Serialization format used to Store Documents and make remote procedure calls in MongoDB
+[BSON types](https://docs.mongodb.com/manual/reference/bson-types/)
 
 <a name="import"/>
 
