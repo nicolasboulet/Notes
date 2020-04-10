@@ -105,6 +105,7 @@ collection.count
 # SQL To Mongo
 
 SQL | Mongo
+--- | ---
 WHERE | $match
 GROUP BY | $group
 SELECT | $project
