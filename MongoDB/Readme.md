@@ -5,7 +5,9 @@
 [Ruby](#ruby)  
 [Connection](#connection)  
 [Mongo](#mongo)  
-[Rails]#(#rails)
+[Rails Install](#rails)  
+[rails console](#railsc)  
+[SQL to Mongo](#sqlmongo)  
 
 
 <a name="import"/>
@@ -64,25 +66,49 @@ db.zips.findOne()
 
 ```
 
-
 <a name="rails"/>
 
-## Rails
+## Rails installation
 
 See the code [here](https://github.com/nicolasboulet/fullstack-course3-module1-zips)
 
 ### Gemfile
 gem 'mongoid'
 
-### Create mongoid.yml
+### Create config/mongoid.yml
 
 ```bash
 rails g mongoid:config
 ```
-### Bootstrap mongoid with the application
+### Bootstrap mongoid with the application config/application.rb
 
 See conf [here](https://github.com/nicolasboulet/fullstack-course3-module1-zips/blob/master/config/application.rb)
 
 ```ruby
 Mongoid.load!('./config/mongoid.yml')
 ```
+
+<a name="railsc"/>
+
+# Rails c
+
+```ruby
+mongo_client = Mongoid::Clients.default # Mongo Client object
+mongo_client.database.name
+collection = mongo_client[:zips]
+collection.count
+
+```
+
+<a name="sqlmongo"/>
+
+# SQL To Mongo
+
+SQL | Mongo
+WHERE | $match
+GROUP BY | $group
+SELECT | $project
+ORDER BY | $sort
+LIMIT | $limit
+SUM | $sum
+COUNT | $count
